@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz VideoIA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="topic-body quiz-body">
+    <div class="topic-page quiz-page">
+      <a class="back-link" href="index.html">← Voltar</a>
+      <section class="quiz-card">
+        <p class="eyebrow">Quiz Interativo</p>
+        <h1>Teste seus conhecimentos em vídeo digital</h1>
+        <div class="quiz-description">
+          <p>
+            A cada tentativa, o sistema sorteia 5 perguntas da nossa base de 15
+            questões. Responda, confirme e descubra seu percentual de acerto.
+          </p>
+        </div>
+        <div class="quiz-progress">
+          <span id="question-counter">Pergunta 1/5</span>
+          <div class="progress-track">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+        <div class="question-card" id="question-card">
+          <div class="pill" id="question-topic">Fundamentos</div>
+          <h2 id="question-text">Carregando pergunta...</h2>
+          <div class="options-grid" id="options-grid"></div>
+        </div>
+        <div class="quiz-controls">
+          <span class="quiz-meta" id="selection-hint">Selecione uma resposta.</span>
+          <button class="primary-btn" id="next-btn" disabled>
+            Confirmar resposta
+          </button>
+        </div>
+        <div class="result-panel" id="result-panel" hidden>
+          <div class="score-circle" id="score-circle">0%</div>
+          <h2 id="result-title">Resultado</h2>
+          <p id="result-message">
+            Você acertou 0 de 5 perguntas. Tente novamente para melhorar sua
+            pontuação!
+          </p>
+          <button class="secondary-btn" id="restart-btn">Refazer quiz</button>
+        </div>
+      </section>
+    </div>
+    <script src="quiz.js" defer></script>
+  </body>
+</html>
+

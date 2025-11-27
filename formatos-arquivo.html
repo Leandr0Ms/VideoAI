@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formatos de Arquivo | Plataforma VideoIA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="topic-body">
+    <div class="topic-page">
+      <a class="back-link" href="index.html">← Voltar</a>
+      <section class="topic-card">
+        <p class="eyebrow">Trilha Fundamentos</p>
+        <h1>Formatos de Arquivo</h1>
+        <p>
+          Um arquivo de vídeo é formado por um <strong>container</strong> (MP4,
+          MKV, MOV) que guarda faixas de áudio, vídeo, legendas e metadados, e
+          por <strong>codecs</strong> responsáveis por comprimir cada faixa.
+          Escolher o container certo garante compatibilidade com players e
+          pipelines de IA.
+        </p>
+        <ul>
+          <li><strong>MP4:</strong> padrão universal, ótimo para web e mobile.</li>
+          <li><strong>MOV/ProRes:</strong> usado em workflows profissionais pela qualidade.</li>
+          <li><strong>MKV:</strong> suporta várias legendas/áudios e é aberto.</li>
+          <li><strong>WebM:</strong> pensado para streaming com codecs livres.</li>
+        </ul>
+        <p>
+          Observe também o formato de áudio (AAC, PCM) e metadados de timecode.
+          Projetos com IA podem exigir containers que preservem dados EXIF ou
+          camadas alfa para composições automáticas.
+        </p>
+        <div class="topic-media">
+          <h3>Camada sonora</h3>
+          <figure>
+            <audio controls>
+              <source src="assets/audio/pulso-videoia.wav" type="audio/wav" />
+              Seu navegador não suporta reprodução de áudio.
+            </audio>
+            <figcaption>
+              Exemplo de pulso PCM pensado para timelines exportadas em containers MP4/MOV, mantendo
+              fidelidade antes da compressão final.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

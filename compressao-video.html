@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compressão de Vídeo | Plataforma VideoIA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="topic-body">
+    <div class="topic-page">
+      <a class="back-link" href="index.html">← Voltar</a>
+      <section class="topic-card">
+        <p class="eyebrow">Trilha Fundamentos</p>
+        <h1>Compressão de Vídeo</h1>
+        <p>
+          Arquivos de vídeo brutos ocupam muito espaço. A compressão reduz esse
+          volume removendo redundâncias espaciais (entre pixels do mesmo quadro)
+          e temporais (entre quadros consecutivos). Codecs como H.264, H.265 e
+          AV1 aplicam previsões matemáticas para armazenar apenas diferenças.
+        </p>
+        <p>
+          A compressão pode ser <strong>intra-frame</strong> (cada quadro é
+          comprimido sozinho) ou <strong>inter-frame</strong> (quadros
+          relacionam-se em grupos). Em fluxos com IA, escolher o codec correto
+          impacta diretamente o tempo de processamento e a qualidade final.
+        </p>
+        <ul>
+          <li><strong>Bitrate:</strong> quantidade de dados transmitidos por segundo.</li>
+          <li><strong>GOP:</strong> sequência de quadros I, P e B que define a eficiência.</li>
+          <li><strong>Lossy vs Lossless:</strong> compressão com ou sem perda perceptível.</li>
+          <li><strong>Hardware:</strong> placas com NVENC/Quick Sync aceleram o processo.</li>
+        </ul>
+        <p>
+          Para apresentações, use bitrates mais altos e codecs populares; para
+          análise automatizada, equilibre tamanho e fidelidade para não limitar
+          os modelos de IA.
+        </p>
+        <div class="topic-media">
+          <h3>Visual vetorial</h3>
+          <figure>
+            <object
+              data="assets/vector/orbita.svg"
+              type="image/svg+xml"
+              aria-label="Ilustração vetorial de órbitas de dados"
+            ></object>
+            <figcaption>
+              O gráfico vetorial simboliza trajetórias de quadros I/P/B e como a compressão
+              redistribui energia ao longo do tempo.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+
