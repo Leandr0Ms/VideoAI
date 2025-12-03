@@ -2,138 +2,187 @@ const QUESTIONS_PER_RUN = 5;
 
 const questionPool = [
   {
-    id: 'digital-definition',
+    id: 'digital-basics',
     topic: 'Fundamentos',
-    question: 'O que define um vídeo digital?',
+    question: 'Um vídeo digital é formado por...',
     options: [
-      'Uma sequência de quadros convertida em bits manipuláveis',
-      'Um filme registrado exclusivamente em película analógica',
-      'Um conjunto de fotografias impressas organizadas em álbuns',
-      'Uma transmissão de rádio codificada em AM'
+      'Quadros sequenciais transformados em dados',
+      'Apenas áudio sem imagem',
+      'Fotografias impressas em papel',
+      'Códigos de texto puro'
     ],
     answer: 0
   },
   {
     id: 'frame-rate',
     topic: 'Fundamentos',
-    question: 'Qual parâmetro indica quantos quadros são exibidos por segundo?',
-    options: ['Resolução', 'Profundidade de cor', 'Taxa de quadros (fps)', 'Bitrate'],
-    answer: 2
+    question: 'Qual parâmetro indica quantos quadros aparecem a cada segundo?',
+    options: ['Resolução', 'Taxa de quadros (fps)', 'Profundidade de cor', 'Bitrate'],
+    answer: 1
+  },
+  {
+    id: 'resolucao',
+    topic: 'Fundamentos',
+    question: 'Dizer que um vídeo é 1920×1080 significa que ele possui...',
+    options: [
+      '1920 pixels de largura por 1080 de altura',
+      '1920 quadros por segundo',
+      '1920 minutos de duração',
+      'Somente áudio estéreo'
+    ],
+    answer: 0
+  },
+  {
+    id: 'profundidade-cor',
+    topic: 'Fundamentos',
+    question: 'Profundidade de cor indica...',
+    options: [
+      'Quantos tons diferentes cada pixel pode exibir',
+      'A distância do microfone ao ator',
+      'O peso da câmera',
+      'O número de clipes na timeline'
+    ],
+    answer: 0
   },
   {
     id: 'bitrate',
     topic: 'Compressão',
-    question: 'O que representa o bitrate de um arquivo de vídeo?',
+    question: 'Bitrate representa...',
     options: [
-      'Número de pixels em cada quadro',
-      'Quantidade de dados transmitidos por segundo',
-      'Quantidade de pistas de áudio disponíveis',
-      'Velocidade de obturador da câmera'
+      'Quantidade de dados enviados por segundo',
+      'Número de lentes usadas',
+      'Velocidade do tripé',
+      'Cor da iluminação'
     ],
-    answer: 1
+    answer: 0
   },
   {
-    id: 'interframe',
+    id: 'compressao-objetivo',
     topic: 'Compressão',
-    question: 'Qual é a principal vantagem da compressão inter-frame?',
+    question: 'Por que aplicamos compressão ao vídeo?',
     options: [
-      'Cada quadro é independente, facilitando cortes',
-      'Aproveita semelhanças entre quadros para economizar dados',
-      'Garante 100% de fidelidade sem perdas',
-      'Permite armazenar áudio e vídeo no mesmo container'
+      'Para reduzir tamanho mantendo qualidade aceitável',
+      'Para deixar o arquivo ilegível',
+      'Para remover totalmente o áudio',
+      'Para impedir a edição posterior'
     ],
-    answer: 1
+    answer: 0
+  },
+  {
+    id: 'intra-vs-inter',
+    topic: 'Compressão',
+    question: 'Compressão inter-frame aproveita...',
+    options: [
+      'Semelhanças entre quadros diferentes',
+      'Somente informações do primeiro quadro',
+      'Apenas a faixa de áudio',
+      'Somente metadados de GPS'
+    ],
+    answer: 0
   },
   {
     id: 'codec-popular',
     topic: 'Compressão',
-    question: 'Qual codec é amplamente utilizado por equilibrar qualidade e tamanho?',
-    options: ['H.264', 'MPEG-2', 'DV', 'RAW Cinema'],
-    answer: 0
-  },
-  {
-    id: 'codec-open',
-    topic: 'Compressão',
-    question: 'Qual codec aberto e moderno é indicado para streaming e aplicações com IA?',
-    options: ['AV1', 'JPEG', 'MPEG-1', 'WMV'],
+    question: 'Um codec muito usado por equilibrar qualidade e tamanho é o...',
+    options: ['H.264', 'TXT', 'RAW Cinema', 'DOCX'],
     answer: 0
   },
   {
     id: 'container-web',
     topic: 'Formatos',
-    question: 'Qual container é padrão na web por ser compatível com praticamente todos os players?',
-    options: ['MP4', 'MXF', 'M2TS', 'CinemaDNG'],
+    question: 'Qual container funciona bem na maioria dos players e navegadores?',
+    options: ['MP4', 'ZIP', 'PSD', 'DOC'],
     answer: 0
   },
   {
-    id: 'container-flex',
+    id: 'metadados',
     topic: 'Formatos',
-    question: 'Qual container aberto permite múltiplas faixas de áudio e legendas sem restrições?',
-    options: ['MKV', 'GIF', 'BMP', 'TIFF'],
-    answer: 0
-  },
-  {
-    id: 'prores',
-    topic: 'Formatos',
-    question: 'Qual combinação é comum em workflows profissionais por preservar mais detalhes?',
+    question: 'Metadados como timecode ajudam a...',
     options: [
-      'MOV com Apple ProRes',
-      'GIF com animações',
-      'JPEG sequencial',
-      'Arquivos TXT sincronizados'
+      'Organizar e sincronizar arquivos',
+      'Aumentar o brilho do set',
+      'Escolher a cor do figurino',
+      'Criar filtros de rede social'
     ],
     answer: 0
   },
   {
-    id: 'metadata',
+    id: 'wav-pcm',
     topic: 'Formatos',
-    question: 'Por que manter metadados como timecode e informações de captura?',
+    question: 'Um arquivo WAV com pulso PCM serve como...',
     options: [
-      'Para liberar espaço em disco',
-      'Para permitir automações e alinhamento preciso em workflows com IA',
-      'Para aumentar o volume do áudio',
-      'Para desabilitar trilhas B-roll'
+      'Referência de áudio limpa para edições',
+      'Controle remoto da câmera',
+      'Filtro de lente',
+      'Sensor de temperatura'
     ],
-    answer: 1
+    answer: 0
   },
   {
-    id: 'aperture',
+    id: 'estabilizador',
     topic: 'Captura',
-    question: 'Qual ajuste da câmera influencia a profundidade de campo por controlar a abertura da lente?',
-    options: ['ISO', 'Obturador', 'Diafragma (f-stop)', 'Balanço de branco'],
-    answer: 2
-  },
-  {
-    id: 'stabilization',
-    topic: 'Captura',
-    question: 'Que recurso ajuda a estabilizar gravações feitas à mão?',
-    options: ['Gimbal ou estabilizador digital', 'Filtro ND', 'Tripé iluminado', 'Conversor HDMI'],
+    question: 'Para amenizar tremores na gravação usamos...',
+    options: ['Gimbal/estabilizador', 'Teclado MIDI', 'Adaptador de tomada', 'Fone bluetooth'],
     answer: 0
   },
   {
     id: 'broll',
     topic: 'Captura',
-    question: 'Por que registrar imagens de apoio (B-roll) durante a captura?',
+    question: 'Gravar B-roll significa registrar...',
     options: [
-      'Para medir a temperatura ambiente',
-      'Para oferecer recortes complementares e facilitar a edição',
-      'Para substituir o áudio original',
-      'Para reduzir o bitrate final'
+      'Imagens extras que ajudam a edição',
+      'Somente o áudio do set',
+      'Apenas mensagens de texto',
+      'Somente a claquete'
     ],
-    answer: 1
+    answer: 0
+  },
+  {
+    id: 'loop-video',
+    topic: 'Captura',
+    question: 'O loop em 1080p usado no protótipo mostra...',
+    options: [
+      'Oscilações de luz para estudar sensores',
+      'Planilhas financeiras',
+      'Som sem imagem',
+      'Somente gráficos de pizza'
+    ],
+    answer: 0
   },
   {
     id: 'color-grading',
     topic: 'Edição',
-    question: 'Qual etapa ajusta contraste e atmosfera com o uso de LUTs?',
-    options: ['Color grading', 'Captura de campo', 'Renderização 3D', 'Mixagem de PA'],
+    question: 'Color grading é responsável por...',
+    options: [
+      'Ajustar cores e atmosfera das cenas',
+      'Escolher a música tema',
+      'Ligar e desligar o set',
+      'Montar o roteiro'
+    ],
     answer: 0
   },
   {
     id: 'audio-clean',
     topic: 'Edição',
-    question: 'Qual processo corrige ruídos e equilibra volumes durante a pós-produção?',
-    options: ['Tratamento de áudio', 'Compressão inter-frame', 'Animação 2D', 'Render proxy'],
+    question: 'Tratamento de áudio busca...',
+    options: [
+      'Remover ruídos e equilibrar volumes',
+      'Adicionar pixels à imagem',
+      'Trocar o codec automaticamente',
+      'Controlar o foco da câmera'
+    ],
+    answer: 0
+  },
+  {
+    id: 'exportacao',
+    topic: 'Entrega',
+    question: 'Antes de exportar é importante definir...',
+    options: [
+      'O formato/container adequado ao destino',
+      'A cor do cabo HDMI',
+      'O tipo de fonte do roteiro',
+      'O tamanho da sala de aula'
+    ],
     answer: 0
   }
 ];
