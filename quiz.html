@@ -54,5 +54,19 @@
     </div>
     <script src="quiz.js" defer></script>
   </body>
+  <audio id="bgm" autoplay loop>
+  <source src="assets/audio/FundomusicalQUIZ (cut).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("bgm");
+    audio.play().then(() => {
+      setTimeout(() => audio.volume = 1, 500);
+    }).catch(() => {
+      console.log("Autoplay bloqueado, o usuário ainda precisa interagir.");
+    });
+  });
+</script>
 </html>
 
